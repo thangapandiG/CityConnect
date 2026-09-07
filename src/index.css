@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-scale: 100%;
+  }
+
+  html {
+    font-size: var(--font-scale);
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased min-h-screen selection:bg-civic-500 selection:text-white;
+  }
+
+  /* High contrast mode styles */
+  .high-contrast-mode {
+    @apply bg-black text-amber-300;
+  }
+
+  .high-contrast-mode .bg-white,
+  .high-contrast-mode .bg-slate-50,
+  .high-contrast-mode .bg-slate-100 {
+    @apply bg-gray-900 border-2 border-amber-400 text-amber-300;
+  }
+
+  .high-contrast-mode button,
+  .high-contrast-mode a {
+    @apply border-2 border-amber-400 text-amber-300 font-bold focus:ring-4 focus:ring-amber-300;
+  }
+}
+
+/* Accessible focus ring for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #0076c9 !important;
+  outline-offset: 2px !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
